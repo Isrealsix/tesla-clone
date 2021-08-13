@@ -9,7 +9,7 @@ const Section = ({
 	rightBtnText,
 }) => {
 	return (
-		<Wrap>
+		<Wrap bgImage={backgroundImg}>
 			<ItemText>
 				<h1>{model}</h1>
 				<p>{description}</p>
@@ -20,7 +20,7 @@ const Section = ({
 
 					<RightButton>{rightBtnText}</RightButton>
 				</ButtonGroup>
-				<DownArrow src={`/images/${backgroundImg}.svg`} />
+				<DownArrow src="/images/down-arrow.svg" />
 			</Buttons>
 		</Wrap>
 	);
@@ -34,7 +34,7 @@ const Wrap = styled.div`
 	background-size: cover;
 	background-position: center;
 	bacground-repeat: no-repeat;
-	background-image: url('/images/model-s.jpg');
+	background-image: ${props => `url('images/${props.bgImage}.jpg')`};
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
