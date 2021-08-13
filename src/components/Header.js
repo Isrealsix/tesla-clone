@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MenuIcon } from '@material-ui/icons';
 
 const Header = () => {
 	return (
@@ -8,19 +9,15 @@ const Header = () => {
 				<img src="/images/logo.svg" alt="" />
 			</a>
 			<Menu>
-				<p>
-					<a href="#">Model S</a>
-				</p>
-				<p>
-					<a href="#">Model 3</a>
-				</p>
-				<p>
-					<a href="#">Model X</a>
-				</p>
-				<p>
-					<a href="#">Model Y</a>
-				</p>
+				<a href="#">Model S</a>
+				<a href="#">Model 3</a>
+				<a href="#">Model X</a>
+				<a href="#">Model Y</a>
 			</Menu>
+			<RightMenu>
+				<a href="">Shop</a>
+				<a href="">Tesla Account</a>
+			</RightMenu>
 		</Container>
 	);
 };
@@ -44,10 +41,18 @@ const Menu = styled.div`
 	justify-content: center;
 	flex: 1;
 
-	p {
+	a {
 		font-weight: 600;
 		text-transform: uppercase;
 		padding: 0 10px;
 		flex-wrap: no-wrap;
+	}
+`;
+
+const RightMenu = styled.div`
+	a {
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-righ: 10px;
 	}
 `;
