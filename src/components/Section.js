@@ -1,20 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Section = () => {
+const Section = ({
+	description,
+	model,
+	backgroundImg,
+	leftBtnText,
+	rightBtnText,
+}) => {
 	return (
 		<Wrap>
 			<ItemText>
-				<h1>Model S</h1>
-				<p>Order Online for Touch Delivery</p>
+				<h1>{model}</h1>
+				<p>{description}</p>
 			</ItemText>
 			<Buttons>
 				<ButtonGroup>
-					<LeftButton>Custom Order</LeftButton>
+					<LeftButton>{leftBtnText}</LeftButton>
 
-					<RightButton>Existing Inventory</RightButton>
+					<RightButton>{rightBtnText}</RightButton>
 				</ButtonGroup>
-				<DownArrow src="/images/down-arrow.svg" />
+				<DownArrow src={`/images/${backgroundImg}.svg`} />
 			</Buttons>
 		</Wrap>
 	);
@@ -43,6 +49,10 @@ const ItemText = styled.div`
 const ButtonGroup = styled.div`
 	display: flex;
 	margin-bottom: 30px;
+
+	@media only screen and (max-width: 768px) {
+		flex-direction: column;
+	}
 `;
 
 const LeftButton = styled.div`
@@ -62,7 +72,11 @@ const LeftButton = styled.div`
 `;
 
 // Inherit the styles of LeftButton
-const RightButton = styled(LeftButton)``;
+const RightButton = styled(LeftButton)`
+	background-color: #fff;
+	opacity: 0.65;
+	color: #000;
+`;
 
 const DownArrow = styled.img`
 	margin-top: 20px;
